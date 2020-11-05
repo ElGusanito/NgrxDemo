@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NgrxDemo';
+  color = 'primary';
+  mode = 'indeterminate';
+  value = 50;
+  diameter = 100;
+  strokeWidth;
 }
