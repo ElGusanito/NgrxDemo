@@ -12,4 +12,5 @@ export class AppComponent {
   value = 50;
   diameter = 100;
   strokeWidth;
+  float:boolean = true;
 }

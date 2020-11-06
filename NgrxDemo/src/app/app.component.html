@@ -297,11 +297,17 @@
     }
   }
 </style>
+<div class="content" role="main" style="height: calc(100vh - 258px);border:solid 1px slategray;">
+  <h1 style="text-align: center;">NgRx Store Demo</h1>
+    <div style="position:relative;width:100%;height:100%">
+      <mat-form-field appearance="fill" [floatLabel]="float" style="font-size:1.5em;min-width:300px;position:absolute;top:30%;left:35%">
+        <mat-label>Group Code</mat-label>
+        <input matInput placeholder="Group Code"/>
+      </mat-form-field>
+      <mat-progress-spinner [color]="color" [diameter]="diameter" [mode]="mode" [strokeWidth]="strokeWidth" [value]="value" style="position:absolute;top:30%;left:44%">
+      </mat-progress-spinner>
+    </div>
 
-
-<div class="content" role="main">
-	<mat-progress-spinner [color]="color" [diameter]="diameter" [mode]="mode" [strokeWidth]="strokeWidth" [value]="value">
-	</mat-progress-spinner>
 </div>
 
 
