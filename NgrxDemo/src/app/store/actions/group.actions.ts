@@ -5,7 +5,7 @@ export const updateGroup= createAction(
 );
 
 export const updateGroupSuccess = createAction(
-  '[Group] Update GroupSuccess'
+  '[Group] Update GroupSuccess', props<{ payload:{groupCode:string} }>()
 );
 
 export const updateGroupFailure = createAction(

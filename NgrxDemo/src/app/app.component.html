@@ -297,18 +297,18 @@
     }
   }
 </style>
-<div class="content" role="main" style="height: calc(100vh - 258px); position:relative; width:100%;border:solid 1px #673ab7;">
+<div class="content" role="main" style="height: calc(100vh - 258px); position:relative; width:100%;border:solid 1px #673ab7;" *ngIf="group$ | async as group">
   <h1 style="text-align: center;color:#673ab7">NgRx Store Demo</h1>
     <div style="position:absolute;top:30%;height:300px;font-size:1.5em;">
       <mat-form-field appearance="fill" [floatLabel]="float" style="min-width:300px;margin-right:10px">
         <mat-label>Group Code</mat-label>
-        <input matInput placeholder="Group Code"/>
+        <input #groupCode matInput placeholder="Group Code"/>
       </mat-form-field>
-      <button mat-stroked-button title="Save" type="button" color="primary" (click)="update($event)" style="font-size:inherit">Save</button>
-      <div *ngIf="groupCode$ | async as groupCode">
-        <span style="color: #673ab7;">Current value of Group Code: {{groupCode ? groupCode : 'undefined'}}</span>
+      <button mat-stroked-button title="Save" type="button" color="primary" (click)="update(groupCode.value)" style="font-size:inherit">Save</button>
+      <div>
+        <span style="color: #673ab7;">Current value of Group Code: {{group.groupCode ? group.groupCode : 'undefined'}}</span>
       </div>
-      <mat-progress-spinner [color]="color" [diameter]="diameter" [mode]="mode" [strokeWidth]="strokeWidth" [value]="value" style="position:absolute;top:0px;left:100px">
+      <mat-progress-spinner *ngIf="group.loading" [color]="color" [diameter]="diameter" [mode]="mode" [strokeWidth]="strokeWidth" [value]="value" style="position:absolute;top:0px;left:100px">
       </mat-progress-spinner>
     </div>
 

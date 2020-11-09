@@ -24,6 +24,14 @@ export const reducer = createReducer(
         ...state, loading: true
       };
     }
+  ),
+  on(
+    GroupActions.updateGroupSuccess,
+    (state, action) => {
+      return {
+        ...state, loading: false, groupCode: action.payload.groupCode
+      };
+    }
   )
 );
 

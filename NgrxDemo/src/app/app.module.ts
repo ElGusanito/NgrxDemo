@@ -12,6 +12,8 @@ import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/mat
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import * as fromGroup from './store/reducers/group.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { GroupEffects } from './store/effects/group.effects';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import * as fromGroup from './store/reducers/group.reducer';
     MatButtonModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreModule.forFeature(fromGroup.groupFeatureKey, fromGroup.reducer)
+    StoreModule.forFeature(fromGroup.groupFeatureKey, fromGroup.reducer),
+    EffectsModule.forRoot([GroupEffects]),
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}],
   bootstrap: [AppComponent]
