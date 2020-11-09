@@ -6,19 +6,19 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
+import * as fromGroup from './group.reducer';
 
 
-export interface ScreenGroup{
-  groupCode: string,
-  loading: boolean
+export interface State{
+  [fromGroup.groupFeatureKey]: fromGroup.State;
+
 }
 
-export interface State {
-  group: ScreenGroup
-}
+
 
 export const reducers: ActionReducerMap<State> = {
-  group: null
+
+  [fromGroup.groupFeatureKey]: fromGroup.reducer,
 };
 
 

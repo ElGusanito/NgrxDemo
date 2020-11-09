@@ -304,8 +304,8 @@
         <mat-label>Group Code</mat-label>
         <input matInput placeholder="Group Code"/>
       </mat-form-field>
-      <button mat-stroked-button title="Save" type="button" color="primary" style="font-size:inherit">Save</button>
-      <div>
+      <button mat-stroked-button title="Save" type="button" color="primary" (click)="update($event)" style="font-size:inherit">Save</button>
+      <div *ngIf="groupCode$ | async as groupCode">
         <span style="color: #673ab7;">Current value of Group Code: {{groupCode ? groupCode : 'undefined'}}</span>
       </div>
       <mat-progress-spinner [color]="color" [diameter]="diameter" [mode]="mode" [strokeWidth]="strokeWidth" [value]="value" style="position:absolute;top:0px;left:100px">
